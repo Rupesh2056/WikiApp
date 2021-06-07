@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {% if entry %}
+        {{entry | safe}}
+        <br>
+        <button class="btn btn-warning mt-2"><a style="text-decoration: none;" href="{% url 'edit-entry' title %}">Edit</a></button>
+    {% elif Message %}
+        {{Message}}
+        
+    {% else %}
+        Opps! The wiki page doesnt exist!
+    {% endif %}
+
+    
+   
+    
+    
+{% endblock %}
